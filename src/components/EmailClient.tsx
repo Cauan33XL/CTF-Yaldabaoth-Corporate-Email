@@ -34,19 +34,31 @@ interface Email {
 
 // Função para criar emails da caixa de entrada (9 totais, completos)
 const createMockInboxEmails = (userName: string): Email[] => [
-  {
+
+  //Primeira Flag Phishing seção Recebidos
+ {
     id: '1',
-    from: 'kayori.ayumi@corp.example.com',
-    fromName: 'Kayori Ayumi',
-    subject: 'SecureFlag{ProtejaSuasSenhas} - Atualização: Políticas de Segurança de Senhas',
-    preview: `Olá ${userName}, Atualização de rotina sobre as políticas de segurança...`,
+    from: 'seg.info@secure-auth-portal.com',
+    fromName: 'Equipe de Segurança da Informação',
+    subject: 'SecureFlag {ProtejaSuasSenhas} - Ação Urgente: Verificação de Segurança de conta',
+    preview: `Prezado Sebastião Santos, Detectamos atividade incomum em sua conta corporativa...`,
     time: 'há 1 hora',
     isRead: true,
     hasAttachment: false,
-    priority: 'normal',
-    fullContent: `Olá ${userName},\n\nEsta é uma atualização de rotina sobre as políticas de segurança de senhas e controles de acesso. As mudanças propostas estão descritas no portal interno de segurança. Para revisar, acesse: https://intranet.corp.example.com/security/policies e consulte a seção "Políticas de Senha".\n\nPor favor, registre suas observações no formulário de feedback do portal.\n\nAtenciosamente,\nKayori Ayumi\nEquipe de Segurança da Informação`,
-    isSuspicious: false
+    priority: 'high',
+    fullContent: `Prezado Sebastião Santos,
+
+Detectamos atividade incomum em sua conta corporativa. Para sua segurança, por favor, verifique os detalhes da sua conta imediatamente clicando no link abaixo.
+
+[Verificar Conta Agora]
+
+A falha em fazer isso dentro de 24 horas resultará na suspensão da conta.
+
+Atenciosamente,
+Equipe de Segurança da Informação`,
+    isSuspicious: true
   },
+
   {
     id: '2',
     from: 'lucas.rocha@corp.example.com',
@@ -153,8 +165,7 @@ const createMockInboxEmails = (userName: string): Email[] => [
   }
 ]
 
-// Função para criar emails enviados (6 totais, completos)
-// Observação: o primeiro email enviado (s1) ficará inicialmente com isRead: false
+//Segunda Flag Phishing seção Enviados
 const createMockSentEmails = (userEmail: string, userName: string): Email[] => [
   {
     id: 's1',
@@ -168,7 +179,7 @@ const createMockSentEmails = (userEmail: string, userName: string): Email[] => [
     isRead: false, // <-- primeiro enviado NÃO LIDO
     hasAttachment: true,
     priority: 'high',
-    fullContent: `Prezada Equipe Yaldabaoth,\n\nPara garantir que o próximo ajuste salarial seja processado corretamente, todos precisam atualizar suas informações de cadastro no portal de RH até o final do dia. Por favor, use o link abaixo para acessar o portal e confirmar seus dados: https://adecidir Qualquer problema, me avisem.\n\nAtenciosamente,\n${userName}`,
+    fullContent: `Prezada Equipe Yaldabaoth,\n\nPara garantir que o próximo ajuste salarial seja processado corretamente, todos precisam atualizar suas informações de cadastro no portal de RH até o final do dia. Por favor, use o link abaixo para acessar o portal e confirmar seus dados: https://yaldabaoth-sistema-rh-ctf.vercel.app/ Qualquer problema, me avisem.\n\nAtenciosamente,\n${userName}`,
     isSuspicious: true
   }
 ]
