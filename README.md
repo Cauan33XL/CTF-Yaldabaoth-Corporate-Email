@@ -815,6 +815,6 @@ Prof. Rômulo Valadares - UNICEPLAC
 2. HackerSec - Fundamentals of hacker challenges
 3. UNB Cybersecurity Club - Teaching methodologies
 4. Correio Braziliense - Market context
-5. IBSEC - Sector statistics
+5. IBSEC - Sector statistics.
 
 ---
