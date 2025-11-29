@@ -37,7 +37,7 @@ const createMockInboxEmails = (userName: string): Email[] => [
 id: '1',
 from: 'seg.info@secure-auth-portal.com',
 fromName: 'Equipe de Segurança da Informação',
-subject: 'SecureFlag {ProtejaSuasSenhas} - Ação Urgente: Verificação de Segurança de conta',
+subject: 'SecureFlag{ProtejaSuasSenhas} - Ação Urgente: Verificação de Segurança de conta',
 preview: `Prezado Sebastião Santos, Detectamos atividade incomum em sua conta corporativa...`,
 time: 'há 1 hora',
 isRead: false,
